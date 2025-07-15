@@ -122,7 +122,12 @@ public class RoomManager : MonoBehaviour
         }
         return true;
     }
+    private void PlayerSpawn()
+    {
+        Vector3 spawnPos = new Vector3(Random.Range(0, 3), 0, Random.Range(0, 3));
+        GameObject obj = PhotonNetwork.Instantiate("Player", spawnPos, Quaternion.identity);
 
+    }
     public void ClickMapLeft()
     {
         curMapIndex--;
